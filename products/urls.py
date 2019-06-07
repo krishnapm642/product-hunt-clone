@@ -1,6 +1,10 @@
 from django.urls import path
-from .views import home
+from .views import home, create, productdetail, upvote
 
 urlpatterns = [
-    path('',  home, name = 'home')
+    
+    path('create/', create, name = 'create'),
+    path('<int:product_id>', productdetail , name = 'detail'),
+    path('<int:product_id>/upvote', upvote, name='upvote')
+
 ]
